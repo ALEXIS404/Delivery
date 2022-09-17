@@ -10,10 +10,13 @@ html body {
     min-width: 100vw;
     padding: 0;
     margin: 0;
+    gap: 1em;
     position: absolute;
 }
 
-
+.icon-menu-movil{
+    display: none;
+}
 .header{
 grid-area: navbar;
 width: 100%;
@@ -22,12 +25,11 @@ background-color: rgba(39, 38, 38, 1);
 }
 
 .navbar{
-    width: 100%; 
-    height: 100%; 
     display: flex;
     align-items: center;
-    justify-content: space-around;  
-    gap: 1em;
+    height: 100%;
+    width: 96%;
+    justify-content: space-between;
 }
 
 .logo-nav{
@@ -38,10 +40,20 @@ background-color: rgba(39, 38, 38, 1);
     padding-left: 0.8em;
 }
 
+.menu > .menu_links{
+    text-decoration: none;
+    color: white;
+}
+
+.menu > .menu_links:hover{
+    cursor: pointer;
+}
+
 .option-menu{
-    width: 100%;
     display: flex;
     justify-content: center;
+    transition: all 5s ease-in-out;
+
 }
 
 .option-menu > .menu{
@@ -51,7 +63,7 @@ background-color: rgba(39, 38, 38, 1);
     margin: 0;
 }
 
-.menu_content{
+.menu{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -59,12 +71,12 @@ background-color: rgba(39, 38, 38, 1);
     color: white;
 }
 
-.search-product{
+/* .search-product{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .main{
     grid-area: main;
@@ -75,8 +87,54 @@ background-color: rgba(39, 38, 38, 1);
 }
 
 
+#menu-movil{
+    display: none;
+}
+/*media query*/
+@media (max-width: 700px) {
+    /*mostart icono de movil*/
+    .icon-menu-movil{
+        display: block;
+    }
 
+    /*ocultar menu*/
+    .option-menu{
+        display: none;
+    }
 
+    .menu .menu_links {
+        padding: 0 60% 0 0;
+        font-size: 1.5em;
+        padding-left: 30px;
+    }
 
+    .menu {
+     display: flex;
+     flex-direction: column;   
+    }
+}
 
+.input-menu:checked + .option-menu {
+    display: block;
+    position: absolute;
+    background-color:  rgb(40, 39, 39);;
+    min-height: 100vh;
+    top: 0px;
+    width: 50%;
+}
 
+.mobile-brand {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 3px 0 0 34px;
+}
+
+.logo-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44%;
+    background-color: white;
+    border-radius: 49%;
+}
